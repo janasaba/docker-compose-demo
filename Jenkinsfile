@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('SCM checkout') {
             steps {
-                sh 'git SCM checkout'
+                echo 'git SCM checkout'
             }
         }
         stage('SCM checkout') {
