@@ -1,9 +1,9 @@
 pipeline {
-    agent none 
+    agent any 
     stages {
-        stage ('SCM checkout') {
+        stage ('Run docker-compose') {
             steps {
-                echo 'git SCM checkout'
+                sh 'docker-compose up -d --build'
             }
         }
         stage('SCM checkout') {

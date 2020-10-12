@@ -15,7 +15,7 @@ volumes:
 services:
   jenkins:
     build: jenkins
-    container_name: jenkins
+    container_name: jenkins_demo
     ports:
       - 8081:8080
     volumes:
@@ -28,14 +28,14 @@ services:
       - tools
   tomcat:
     build: tomcat
-    container_name: tomcat
+    container_name: tomcat_demo
     ports:
       - 8082:8080
     networks:
       - tools
   nexus:
     image: sonatype/nexus3:latest
-    container_name: nexus
+    container_name: nexus_demo
     ports:
       - 8083:8081
     networks:
@@ -44,14 +44,14 @@ services:
       - nexus-data:/nexus-data
   sonarqube:
     image: sonarqube:latest
-    container_name: sonarqube_abschlussprojekt
+    container_name: sonarqube_demo
     ports:
       - 8084:9000
     networks:
       - tools
   mysql:
     image: mysql:latest
-    container_name: mysql
+    container_name: mysql_demo
     environment:
     - MYSQL_ROOT_PASSWORD=root
     - MYSQL_USER=root
